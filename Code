@@ -1,0 +1,4 @@
+import random
+
+number = random.randit(1, 10)
+print(number)
