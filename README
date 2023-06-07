@@ -1,0 +1,2 @@
+This a simple number guessing game using Python. A random number is generated and the user has three chances to guess it correctly. 
+You can choose to keep playing after guessing correctly or running out of guesses. 
