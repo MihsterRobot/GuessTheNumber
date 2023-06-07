@@ -1,4 +1,52 @@
+import sys
 import random
 
-number = random.randit(1, 10)
-print(number)
+
+def guess_the_number():
+    print("\n" + "\t\t\t\tNumber Guessing Game")
+    print("You have three chances to guess the correct number. Good luck!")
+    print()
+
+    num = random.randint(1, 10)
+    guesses = 3
+    while guesses > 0:
+        # Read in user input and cast to int
+        # Use try to catch non-numeric characters
+        user_guess = int(input("Enter a number between 1 and 10: "))
+
+        count = 0
+        # Input validation
+        while user_guess < 1 or user_guess > 10:
+            # Placed here because of initial user error
+            count += 1
+
+            # Prompt user for input and cast to int
+            user_guess = int(input("Enter a valid number: "))
+
+            # End game if user enters more than three errors
+            if count > 3:
+                print("You've entered too many errors. Game Over!")
+                break
+
+        if user_guess == num:
+            print("You guessed the correct number!")
+            sys.exit()
+        else:
+            guesses -= 1
+            if guesses < 1:
+                restart = input("\nNo more guesses left. Enter 'Y' to play again, or 'N' to end the game: ")
+                if restart == 'Y' or restart == 'y':
+                    guess_the_number()
+                else:
+                    break
+            print("Try again, you have ", end='')
+            print(guesses, end='')
+            if guesses > 1:
+                print(" more guesses.\n")
+            else:
+                print(" more guess.\n")
+
+
+guess_the_number()
+
+
