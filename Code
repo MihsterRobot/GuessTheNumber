@@ -9,6 +9,7 @@ def guess_the_number():
 
     num = random.randint(1, 10)
     guesses = 3
+
     while guesses > 0:
         # Read in user input and cast to int
         # Use try to catch non-numeric characters
@@ -30,7 +31,12 @@ def guess_the_number():
 
         if user_guess == num:
             print("You guessed the correct number!")
-            sys.exit()
+            # Use try to catch numeric characters
+            restart = input("Enter 'Y' to play again, or 'N' to end the game: ")
+            if restart == 'Y' or restart == 'y':
+                guess_the_number()
+            else:
+                break
         else:
             guesses -= 1
             if guesses < 1:
