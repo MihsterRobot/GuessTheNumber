@@ -1,9 +1,8 @@
-import sys
 import random
 
 
 def guess_the_number():
-    print("\n" + "\t\t\t\tNumber Guessing Game")
+    print("\n" + "\t"*5 + "Number Guessing Game")
     print("You have three chances to guess the correct number. Good luck!")
     print()
 
@@ -31,7 +30,6 @@ def guess_the_number():
 
         if user_guess == num:
             print("You guessed the correct number!")
-            # Use try to catch numeric characters
             restart = input("Enter 'Y' to play again, or 'N' to end the game: ")
             if restart == 'Y' or restart == 'y':
                 guess_the_number()
