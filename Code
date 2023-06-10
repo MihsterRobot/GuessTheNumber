@@ -11,7 +11,6 @@ def guess_the_number():
 
     while guesses > 0:
         # Read in user input and cast to int
-        # Use try to catch non-numeric characters
         user_guess = int(input("Enter a number between 1 and 10: "))
 
         count = 0
